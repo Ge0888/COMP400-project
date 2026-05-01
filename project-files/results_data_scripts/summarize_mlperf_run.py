@@ -39,9 +39,9 @@ def parse_epoch_durations(per_epoch_stats: dict) -> list[float]:
     durations = []
     for epoch_key in sorted(per_epoch_stats.keys(), key=lambda x: int(x)):
         epoch = per_epoch_stats[epoch_key]
-        if "durration" not in epoch:
-            raise KeyError(f"Missing durration for epoch {epoch_key}")
-        durations.append(float(epoch["durration"]))
+        if "duration" not in epoch:
+            raise KeyError(f"Missing duration for epoch {epoch_key}")
+        durations.append(float(epoch["duration"]))
     if not durations:
         raise ValueError("No epoch durations found")
     return durations
