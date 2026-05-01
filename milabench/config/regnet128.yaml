@@ -1,0 +1,213 @@
+include:
+  # One of these should be enabled, depending on the GPU being tested
+  - base_rtxa2000.yaml
+  #- base_v100.yaml
+
+#################
+# Enabled tests #
+#################
+
+regnet_y_128gf:
+  enabled: true
+  weight: 1.0
+
+##################
+# Disabled tests #
+##################
+
+llama:
+  enabled: false
+  weight: 0.0
+
+resnet50:
+  enabled: false
+  weight: 0.0
+
+resnet50-noio:
+  enabled: false
+  weight: 0.0
+
+convnext_large-fp32:
+  enabled: false
+  weight: 0.0
+
+convnext_large-fp16:
+  enabled: false
+  weight: 0.0
+
+convnext_large-tf32:
+  enabled: false
+  weight: 0.0
+
+convnext_large-tf32-fp16:
+  enabled: false
+  weight: 0.0
+
+bert-fp32:
+  enabled: false
+  weight: 0.0
+
+bert-fp16:
+  enabled: false
+  weight: 0.0
+
+bert-tf32:
+  enabled: false
+  weight: 0.0
+
+bert-tf32-fp16:
+  enabled: false
+  weight: 0.0
+
+t5:
+  enabled: false
+  weight: 0.0
+
+reformer:
+  enabled: false
+  weight: 0.0
+
+whisper:
+  enabled: false
+  weight: 0.0
+
+focalnet:
+  enabled: false
+  weight: 0.0
+
+fp16:
+  enabled: false
+  weight: 0.0
+
+bf16:
+  enabled: false
+  weight: 0.0
+
+tf32:
+  enabled: false
+  weight: 0.0
+
+fp32:
+  enabled: false
+  weight: 0.0
+
+brax:
+  enabled: false
+  weight: 0.0
+
+# Diffusion
+diffusion-single:
+  enabled: false
+  weight: 0.0
+
+diffusion-gpus:
+  enabled: false
+  weight: 0.0
+
+diffusion-nodes:
+  enabled: false
+  weight: 0.0
+
+# lightning
+lightning:
+  enabled: false
+  weight: 0.0
+
+lightning-gpus:
+  enabled: false
+  weight: 0.0
+
+# dinov2
+dinov2-giant-single:
+  enabled: false
+  weight: 0.0
+
+dinov2-giant-gpus:
+  enabled: false
+  weight: 0.0
+
+dinov2-giant-nodes:
+  enabled: false
+  weight: 0.0
+
+# LLM
+llm-lora-single:
+  enabled: false
+  weight: 0.0
+
+llm-lora-ddp-gpus:
+  enabled: false
+  weight: 0.0
+
+llm-lora-ddp-nodes:
+  enabled: false
+  weight: 0.0
+
+llm-lora-mp-gpus:
+  enabled: false
+  weight: 0.0
+
+llm-full-mp-gpus:
+  enabled: false
+  weight: 0.0
+
+llm-full-mp-nodes:
+  enabled: false
+  weight: 0.0
+
+resnet152-ddp-gpus:
+  enabled: false
+  weight: 0.0
+
+# purejaxrl
+dqn:
+  enabled: false
+  weight: 0.0
+
+ppo:
+  enabled: false
+  weight: 0.0
+
+cleanrljax:
+  enabled: false
+  weight: 0.0
+
+# Geo
+dimenet:
+  enabled: false
+  weight: 0.0
+
+pna: 
+  enabled: false
+  weight: 0.0
+
+recursiongfn:
+  enabled: false
+  weight: 0.0
+
+# llava
+llava-single:
+  enabled: false
+  weight: 0.0
+
+llava-gpus:     # This OOM
+  enabled: false
+  weight: 0.0
+
+# rlhf
+rlhf-single:
+  enabled: false
+  weight: 0.0
+
+rlhf-gpus:
+  enabled: false
+  weight: 0.0
+
+# vjepa
+vjepa-single:
+  enabled: false
+  weight: 0.0
+
+vjepa-gpus:
+  enabled: false
+  weight: 0.0

@@ -1,0 +1,34 @@
+model: 
+  name: regnet_y_128gf
+  type: cnn
+  model_size: 644812894
+
+framework: pytorch
+
+workflow:
+  generate_data: False
+  train: True
+  checkpoint: False
+
+dataset:
+  data_folder: data/regnet_y_128gf
+  format: jpeg
+  num_files_train: 3840
+  num_samples_per_file: 1
+  record_length_bytes: 89236.3
+  record_length_bytes_stdev: 77.85
+  record_length_bytes_resize: 150528
+
+reader: 
+  data_loader: pytorch
+  batch_size: 64
+  read_threads: 8
+  file_shuffle: seed
+  sample_shuffle: seed
+
+train:
+  epochs: 3
+  computation_time: 2.025
+
+metric:
+  au: 0.90
