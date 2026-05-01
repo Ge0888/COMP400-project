@@ -66,7 +66,7 @@ This project assumes access to:
 
 ## Usage
 
-The exact machine paths are intentionally left as placeholders in the scripts. Update them for your own environment before running.
+The exact machine paths are intentionally left as placeholders in the scripts. Update them for your own environment before running. Most scripts assume they are run from the folder where the script is located, unless an input path is provided explicitly.
 
 ### 1. Clone This Repository
 
@@ -187,7 +187,7 @@ write bytes
 
 After parsing the individual Milabench runs, summarize repeated runs:
 
-`python summarize_runs.py <path to milabench runs folder>`
+`python summarize_milabench_runs.py <path to milabench runs folder>`
 
 This creates summary JSON files for each hardware group.
 
@@ -227,11 +227,11 @@ This reports the size of the RegNetY-128GF model.
 
 These values help configure the MLPerf Storage workload YAML files.
 
-### 9.5 Create your own .yaml Workload files (Optional)
+### 9.5 Create or Modify MLPerf Storage Workload YAML Files (Optional)
 
-Using the `avg_batch_time_drop` value from the Milabench runs, and the Dataset and Model statistics collected, you have the required information to create a `.yaml` configuration file.
+Using the drop-first average batch time from the Milabench summaries, and the Dataset and Model statistics collected, you have the required information to create a `.yaml` configuration file.
 
-Following the structure of the other configuration files, fill in the data in the labeled locations.
+Following the structure of the other configuration files, create a fill and fill in the data in the labeled locations. You will need to add its name into `storage/mlpstorage/config` if you wish to run it. 
 
 ### 10. Set Up MLPerf Storage
 
@@ -279,7 +279,7 @@ Example command:
 mlpstorage training run \
   --hosts 127.0.0.1 \
   --num-client-hosts 1 \
-  --client-host-memory-in-gb 16G \
+  --client-host-memory-in-gb 16 \
   --num-accelerators 1 \
   --accelerator-type <accelerator type> \
   --model regnet_y_128gf \
@@ -342,3 +342,5 @@ The goal is to check whether MLPerf Storage can reproduce the real Milabench wor
 - Machine-specific paths are left as placeholders and should be updated before running.
 
 - The Milabench and MLPerf Storage folders do not contain full copies of the original upstream repositories. They only contain the files that were changed or added for this project.
+
+- Most scripts assume they are run from the folder where the script is located, unless an input path is provided explicitly.
