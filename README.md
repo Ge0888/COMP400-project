@@ -19,7 +19,7 @@ The folder structure is intentionally kept the same as the original Milabench re
 
 Only the relevant changed or added files are included here. A new user still needs to clone and install the original Milabench repository separately.
 
-Changed sections in Milabench source files are marked with comments such as:
+Changed sections in Milabench source files are marked with comments:
 
 `##### --- CHANGES ---`
 
@@ -31,7 +31,7 @@ Like the Milabench folder, this follows the original MLPerf Storage directory st
 
 Only the relevant changed or added files are included. A new user still needs to clone and install the original MLPerf Storage repository separately.
 
-Changed sections are marked with comments such as:
+Changed sections are marked with comments:
 
 `##### --- CHANGES ---`
 
@@ -47,7 +47,7 @@ project-files/\
 ├── run_regnet.slurm\
 ├── model_stats/\
 ├── plot_files/\
-└── results_data_scripts/\
+└── results_data_scripts/   
 
 - env.sh stores environment variables used by the Milabench scripts.
 - run_regnet.sh runs the Milabench RegNetY-128GF experiment directly.
@@ -99,11 +99,11 @@ Copy the project’s changed Milabench files into the matching locations of the 
 
 For example:
 
-`COMP400-project/milabench/config/regnet128.yaml → <milabench-repo>/config/regnet128.yaml`
+`COMP400-project/milabench/config/regnet128.yaml → <milabench-repository>/config/regnet128.yaml`
 
 and:
 
-`COMP400-project/milabench/benchmarks/torchvision/main.py → <milabench-repo>/benchmarks/torchvision/main.py`
+`COMP400-project/milabench/benchmarks/torchvision/main.py → <milabench-repository>/benchmarks/torchvision/main.py`
 
 The copied files preserve the same directory structure as the original Milabench repository.
 
@@ -187,7 +187,7 @@ write bytes
 
 After parsing the individual Milabench runs, summarize repeated runs:
 
-`python summarize_milabench_runs.py <path to milabench runs folder>`
+`python summarize_milabench_runs.py [path to milabench_base]/runs`
 
 This creates summary JSON files for each hardware group.
 
@@ -229,7 +229,7 @@ These values help configure the MLPerf Storage workload YAML files.
 
 ### 9.5 Create or Modify MLPerf Storage Workload YAML Files (Optional)
 
-Using the drop-first average batch time from the Milabench summaries, and the Dataset and Model statistics collected, you have the required information to create a `.yaml` configuration file.
+Using the drop-first average batch time from the Milabench summaries, and the dataset and model statistics collected, you have the required information to create a `.yaml` configuration file.
 
 Following the structure of the other configuration files, create a fill and fill in the data in the labeled locations. You will need to add its name into `storage/mlpstorage/config` if you wish to run it. 
 
