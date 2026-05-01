@@ -125,4 +125,4 @@ if __name__ == "__main__":
     main()
 
 # Command:
-# python summarize_mlperf_run.py [path to mlperf storage run output folder]
+# python summarize_mlperf_run.py [path to mlperf storage run results folder]/<run_name>
